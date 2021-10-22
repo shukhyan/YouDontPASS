@@ -663,11 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7de6adbc9acadf4eb2ebab1f1772486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  random: 0
-  Enemy: {fileID: 3571980653589368000, guid: d84fa1f581d59cc43ae7e60686311cc5, type: 3}
-  inst: 0
+  enemy: {fileID: 3571980653589368000, guid: d84fa1f581d59cc43ae7e60686311cc5, type: 3}
   textScore: {fileID: 30021388}
-  cam: {fileID: 0}
 --- !u!4 &877884268
 Transform:
   m_ObjectHideFlags: 0
