@@ -6,16 +6,15 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     float random;
-    [SerializeField] GameObject Enemy;
-    bool canInstanciate;
-    public static int score, highScore, levelUp;
+    [SerializeField] GameObject enemy;
+    bool canInstantiate;
+    public static int score, highScore;
     [SerializeField] Text textScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelUp = 0;
-        canInstanciate = true;
+        canInstantiate = true;
         score = 0;
         highScore = PlayerPrefs.GetInt("highscore", highScore);
     }
@@ -25,17 +24,18 @@ public class GameManager : MonoBehaviour
     {
         textScore.text = score.ToString();
 
-        if (canInstanciate)
+        if (canInstantiate)
             StartCoroutine(callEnemy());
     }
 
+    //instantiate enemy on a random coordinate on the top of the screen
     IEnumerator callEnemy()
     {
-        canInstanciate = false;
+        canInstantiate = false;
         yield return new WaitForSeconds(1.5f);
         random = Random.Range(-2.35f, 2.35f);
-        Instantiate(Enemy, new Vector3(random, 5f, 0f), Enemy.transform.rotation);
-        canInstanciate = true;
+        Instantiate(enemy, new Vector3(random, 5f, 0f), enemy.transform.rotation);
+        canInstantiate = true;
     }
 
     public static void resetHighScore()

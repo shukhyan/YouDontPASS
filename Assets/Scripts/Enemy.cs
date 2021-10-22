@@ -15,8 +15,6 @@ public class Enemy : MonoBehaviour
         randomX = Random.Range(-2.35f, 2.35f);
         direction = new Vector3(0f, -5f, randomX) - this.transform.position;
 
-        //rb = GetComponent<Rigidbody2D>();
-
         Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), cam.GetComponent<EdgeCollider2D>());
     }
 
