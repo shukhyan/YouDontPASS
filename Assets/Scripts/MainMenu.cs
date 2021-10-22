@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] Text textHighScore;
+    int highScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        textHighScore.text = "High Score: " + GameManager.highScore.ToString();
+        highScore = PlayerPrefs.GetInt("highscore", highScore);
+        textHighScore.text = "High Score: " + highScore;
     }
 
     public void PLayGame()
