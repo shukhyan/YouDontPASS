@@ -1905,6 +1905,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 792122342}
     - target: {fileID: 2788073213711550222, guid: ec5b9357d31f98843bcb925a7fafce53, type: 3}
+      propertyPath: rotationSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2788073213711550222, guid: ec5b9357d31f98843bcb925a7fafce53, type: 3}
       propertyPath: textHighScore
       value: 
       objectReference: {fileID: 1097262343}

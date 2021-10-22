@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        speed = 30f;
+        speed = 0.1f;
         health = Random.Range(1, 5);
         randomX = Random.Range(-2.35f, 2.35f);
         direction = new Vector3(0f, -5f, randomX) - this.transform.position;
@@ -19,16 +19,16 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        rb.velocity = direction * speed * Time.deltaTime;
+        rb.velocity = direction * speed;
     }
 
     public void Damage()
     {
         health -= 1;
 
-        if (health <= 0)
+        if (health == 0)
         {
             GameManager.score += 1;
             Destroy(this.gameObject);

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    float speed = 1500f;
+    float speed = 15f;
     Vector3 direction;
     Transform arrow;
 
@@ -13,9 +13,9 @@ public class Bullet : MonoBehaviour
         direction = arrow.transform.up;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        rb.velocity = direction * speed * Time.deltaTime;
+        rb.velocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
